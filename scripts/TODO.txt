@@ -1,0 +1,61 @@
+############################################
+############################################
+## TO DO                                  ##
+############################################
+############################################
+
+## TEST STRAND-SPECIFIC BAM COUNTING
+
+## WHERE IS gzip: stdout: Broken pipe COMING FROM AT END OF PIPELINE?? NEED TO UNIT TEST
+
+## PROVIDE SINGLE-END PARAMETER TO RNASEQC??
+
+## report proportion of XY in flagstat file from genome bam
+
+## e coli biomart not working
+
+## --single-cell-prior
+
+## do i need to add any other columns??
+##sample.id	fastq_file1	fastq_file2	group	contrast	insert_mean	insert_stdev
+
+## ADD SCRIPT TO MERGE ALL COUNTS ACROSS PROJECT??
+
+##environ["PYTHONHOME"] = '%s:%s' % (':'.join([PYTHON_DIR]),environ["PYTHONHOME"])
+
+## /farm/babs/redhat6/software/Trimmomatic-0.33/adapters/
+## /farm/babs/redhat6/software/fastqc-0.11.5/Configuration/contaminant_list.txt
+## /farm/babs/redhat6/software/fastqc-0.11.5/Configuration/adapter_list.txt
+## http://bioinformatics.cvr.ac.uk/blog/illumina-adapter-and-primer-sequences/#disqus_thread
+
+##>multiplexing-forward
+##GATCGGAAGAGCACACGTCT
+##>truseq-forward-contam
+##AGATCGGAAGAGCACACGTCTGAACTCCAGTCAC
+##>nextera-forward-read-contam
+##CTGTCTCTTATACACATCTCCGAGCCCACGAGAC
+##>solexa-forward
+##AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT
+##>truseq-reverse-contam
+##AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTA
+##>nextera-reverse-read-contam
+##CTGTCTCTTATACACATCTGACGCTGCCGACGA
+##>solexa-reverse
+##AGATCGGAAGAGCGGTTCAGCAGGAATGCCGAG
+##
+##>adpt1
+##GATCGGAAGAGCGGTTCAGCAGGAATGCCGAG
+##>adpt2
+##ACACTCTTTCCCTACACGACGCTCTTCCGATCT
+##>adpt3
+##AATGATACGGCGACCACCGAGATCTACACTCTTTCCCTACACGACGCTCTTCCGATCT
+##>adpt4
+##CAAGCAGAAGACGGCATACGAGATCGGTCTCGGCATTCCTGCTGAACCGCTCTTCCGATCT
+##>adpt5
+##ACACTCTTTCCCTACACGACGCTCTTCCGATCT
+##>adpt6
+##CGGTCTCGGCATTCCTGCTGAACCGCTCTTCCGATCT
+
+##TruSeq Adapter, Index 1             GATCGGAAGAGCACACGTCTGAACTCCAGTCACATCACGATCTCGTATGCCGTCTTCTGCTTG
+##Illumina Single End PCR Primer 1    AATGATACGGCGACCACCGAGATCTACACTCTTTCCCTACACGACGCTCTTCCGATCT
+

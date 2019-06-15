@@ -1,0 +1,117 @@
+# This is a configuration file for fastq_screen
+
+###########
+## Bowtie #
+###########
+## If the bowtie binary is not in your PATH then you can 
+## set this value to tell the program where to find it.
+## Uncomment the line below and set the appropriate location
+##
+
+BOWTIE	/farm/babs/redhat6/software/bowtie-1.0.0/bin/bowtie
+BOWTIE2 /farm/babs/redhat6/software/bowtie2-2.1.0/bin/bowtie2
+
+############
+## Threads #
+############
+## Bowtie can be made to run across multiple CPU cores to
+## speed up your searches. Set this value to the number
+## of cores you want to use for your searches.
+
+THREADS		6
+
+##############
+## Databases #
+##############
+## This section allows you to configure multiple databases
+## to search against in your screen. For each database
+## you need to provide a database name (which can't contain
+## spaces) and the location of the bowtie indices which 
+## you created for that database.
+## 
+## The entries shown below are only suggested examples, you 
+## can add as many DATABASE sections as required, and you
+## can comment out or remove as many of the existing entries
+## as desired.
+##
+## Either the original bowtie or bowtie2 may be used for the
+## mapping. Specify the aligner to use with the command line 
+## flag --aligner with arguments 'bowtie' or 
+## 'bowtie2' (default).
+## 
+## The configuration file may list paths to both bowtie and 
+## bowtie2 indices. FastQ Screen automatically detects whether
+## a specified index is compatible with bowtie or bowtie2. 
+##
+## Although the configuration file may list paths to both 
+## bowtie and bowtie2 indices, only one aligner will be used 
+## for the mapping, as specified by the --aligner flag.  
+##
+## The path to the index files SHOULD INCLUDE THE BASENAME of
+## the index, e.g:
+## /data/public/Genomes/Human_Bowtie/GRCh37/Homo_sapiens.GRCh37
+## Thus, the indices (Homo_sapiens.GRCh37.1.bt2, Homo_sapiens.GRCh37.2.bt2, etc.)
+## are found in a folder named 'GRCh37'.
+##
+## If the bowtie AND bowtie2 indices of a given genome reside in the SAME FOLDER,
+## a SINLGE path may be provided to BOTH sets of indices.
+##
+##Human - sequences available from
+##ftp://ftp.ensembl.org/pub/current/fasta/homo_sapiens/dna/
+## DATABASE	Human	/data/public/Genomes/Human_Bowtie/GRCh37/Homo_sapiens.GRCh37
+##
+##Mouse - sequence available from
+##ftp://ftp.ensembl.org/pub/current/fasta/mus_musculus/dna/
+##DATABASE	Mouse	/data/public/Genomes/Mouse/NCBIM37/Mus_musculus.NCBIM37
+##
+##Ecoli- sequence available from EMBL accession U00096.2
+##DATABASE	Ecoli	/data/public/Genomes/Ecoli/Ecoli
+
+################################## BOWTIE2 INDICES ################################## 
+
+DATABASE        HUMAN   /farm/babs/data/genomes/homo_sapiens/hg19/bowtie2/hg19
+DATABASE        HUMAN_RRNA      /farm/babs/data/genomes/homo_sapiens/hg19/rRNA/bowtie2/hg19_rRNA
+DATABASE        MOUSE   /farm/babs/data/genomes/mus_musculus/mm10/bowtie2/mm10
+DATABASE        MOUSE_RRNA      /farm/babs/data/genomes/mus_musculus/mm10/rRNA/bowtie2/mm10_rRNA
+DATABASE	TDEVIL  /farm/babs/data/genomes/sarcophilus_harrisii/sarHar1/bowtie2/sarHar1
+DATABASE	OPOSSUM  /farm/babs/data/genomes/monodelphis_domestica/monDom5/bowtie2/monDom5
+DATABASE	RAT	/farm/babs/data/genomes/rattus_norvegicus/rn6/bowtie2/rn6
+DATABASE        CHICKEN /farm/babs/data/genomes/gallus_gallus/galGal4/bowtie2/galGal4
+DATABASE	FROG	/farm/babs/data/genomes/xenopus_tropicalis/xenTro3/bowtie2/xenTro3
+DATABASE	ZEBRAFISH	/farm/babs/data/genomes/danio_rerio/danRer10/bowtie2/danRer10
+DATABASE	FLY	/farm/babs/data/genomes/drosophila/dm6/bowtie2/dm6
+DATABASE	WORM	/farm/babs/data/genomes/caenorhabditis_elegans/ce10/bowtie2/ce10
+DATABASE	YEAST	/farm/babs/data/genomes/saccharomyces_cerevisiae/sacCer3/bowtie2/sacCer3
+DATABASE	POMBE	/farm/babs/data/genomes/schizosaccharomyces_pombe/spombe/bowtie2/spombe
+DATABASE	ECOLI	/farm/babs/data/genomes/escherichia_coli/k12/bowtie2/ecoli_k12
+DATABASE	GONDII	/farm/babs/data/genomes/toxoplasma_gondii/bowtie2/t_gondii
+DATABASE	TUBERCULOSIS	/farm/babs/data/genomes/mycobacterium_tuberculosis/h37rv/bowtie2/Mtb_H37Rv
+DATABASE	HYORHINIS	/farm/babs/data/genomes/mycoplasma_hyorhinis/dbs_1050/bowtie2/M_hyorhinis
+DATABASE	ACNES	/farm/babs/data/genomes/propionibacterium_acnes/c1/bowtie2/P_acnes
+DATABASE	ADAPTER	/farm/babs/data/genomes/adapter/bowtie2/contaminant_list
+DATABASE	ERCC92	/farm/babs/data/genomes/rna_spike_in/ERCC92/bowtie2/ERCC92
+DATABASE	VECTOR	/farm/babs/data/genomes/univec/bowtie2/univec
+DATABASE	XIST	/farm/babs/data/genomes/sex_marker/bowtie2/xist
+DATABASE        PHIX    /farm/babs/data/genomes/phix/phix/bowtie2/phix
+
+################################## BOWTIE INDICES ################################## 
+
+##DATABASE	HUMAN_hg19	/farm/babs/data/genomes/homo_sapiens/hg19/bowtie/hg19
+##DATABASE	MOUSE_mm10	/farm/babs/data/genomes/mus_musculus/mm10/bowtie/mm10
+##DATABASE	PHIX	/farm/babs/data/genomes/phix/phix/bowtie/phix
+##DATABASE	ERCC92	/farm/babs/data/genomes/rna_spike_in/ERCC92/bowtie/ERCC92
+##DATABASE	CHICKEN_galGal4	/farm/babs/data/genomes/gallus_gallus/galGal4/bowtie/galGal4
+##DATABASE	RAT_rn6	/farm/babs/data/genomes/rattus_norvegicus/rn6/bowtie/rn6
+##DATABASE	FROG_xenTro3	/farm/babs/data/genomes/xenopus_tropicalis/xenTro3/bowtie/xenTro3
+##DATABASE	ZEBRAFISH_danRer10	/farm/babs/data/genomes/danio_rerio/danRer10/bowtie/danRer10
+##DATABASE	FLY_dm6	/farm/babs/data/genomes/drosophila/dm6/bowtie/dm6
+##DATABASE	WORM_ce10	/farm/babs/data/genomes/caenorhabditis_elegans/ce10/bowtie/ce10
+##DATABASE	YEAST_sacCer3	/farm/babs/data/genomes/saccharomyces_cerevisiae/sacCer3/bowtie/sacCer3
+##DATABASE	POMBE	/farm/babs/data/genomes/schizosaccharomyces_pombe/spombe/bowtie/spombe
+##DATABASE	ECOLI_k12	/farm/babs/data/genomes/escherichia_coli/k12/bowtie/ecoli_k12
+##DATABASE	TUBERCULOSIS_h37rv	/farm/babs/data/genomes/mycobacterium_tuberculosis/h37rv/bowtie/Mtb_H37Rv
+##DATABASE	MYCOPLASMA_HYORHINIS	/farm/babs/data/genomes/mycoplasma_hyorhinis/dbs_1050/bowtie/M_hyorhinis
+##DATABASE	P_ACNES	/farm/babs/data/genomes/propionibacterium_acnes/c1/bowtie/P_acnes
+##DATABASE	TASMANIAN_DEVIL_sarHar1	/farm/babs/data/genomes/sarcophilus_harrisii/sarHar1/bowtie1/sarHar1
+##DATABASE	OPOSSUM_monDom5	/farm/babs/data/genomes/monodelphis_domestica/monDom5/bowtie/monDom5
+

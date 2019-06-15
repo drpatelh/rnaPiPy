@@ -1,0 +1,20 @@
+cd /farm/home/patel35/PYTHON/rnaPiPy/v1.0.0/venv/
+/farm/babs/redhat6/software/python-2.7.10/bin/virtualenv python-2.7.10
+
+source python-2.7.10/bin/activate
+
+pip install --upgrade pip
+pip install numpy
+pip install cython
+pip install pandas
+pip install biopython
+pip install bx-python
+
+####https://github.com/pysam-developers/pysam/issues/262
+#### HAD TO MANUALLY INSTALL PYSAM. DOWNLOADED SOURCE FROM https://github.com/pysam-developers/pysam/archive/master.zip
+#### RAN python setup.py install AFTER UNZIPPING
+## pip install pysam
+
+### STILL NOT WORKING...
+pip install RSeQC
+
